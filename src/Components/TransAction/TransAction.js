@@ -1,9 +1,7 @@
 const TransAction = ({transactions}) => {
-    return (
-       <section className="flex items-center justify-around py-2">
-           TransAction
-       </section>
-    )
+    return transactions.map((transaction) => {
+        return <div className="flex justify-around items-center py-2" key={transaction.id}>{transaction.desc}{transaction.amount}</div>;
+    });
 }
 
 export default TransAction
