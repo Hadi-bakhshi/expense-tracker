@@ -1,20 +1,19 @@
 import { useState } from "react";
 
-const TransactionForm = ({addTransaction}) => {
+const TransactionForm = ({ addTransaction }) => {
   const [formValues, setFormValues] = useState({
     type: "expense",
     amount: 0,
     desc: "",
   });
   const changeHandler = (e) => {
-    setFormValues({...formValues, [e.target.name]: e.target.value});
-  }
+    setFormValues({ ...formValues, [e.target.name]: e.target.value });
+  };
 
   const submitHandler = (e) => {
     e.preventDefault();
     addTransaction(formValues);
-  }
-
+  };
 
   return (
     <form onSubmit={submitHandler} className="flex flex-col items-center">
@@ -40,9 +39,9 @@ const TransactionForm = ({addTransaction}) => {
           name="type"
           onChange={changeHandler}
           checked={formValues.type === "expense"}
-          
+          id="expense"
         />
-        <label>Expense</label>
+        <label htmlFor="expense">Expense</label>
         <input
           className="m-2"
           type="radio"
@@ -50,10 +49,16 @@ const TransactionForm = ({addTransaction}) => {
           name="type"
           onChange={changeHandler}
           checked={formValues.type === "income"}
+          id="income"
         />
-        <label>Income</label>
+        <label htmlFor="income">Income</label>
       </div>
-      <button type="submit" className="bg-gray-700 text-white p-1 rounded-md">Add Transaction</button>
+      <button
+        type="submit"
+        className="bg-violet-100 text-violet-700 font-semibold p-2 rounded-md hover:text-violet-100 hover:bg-violet-700"
+      >
+        Add Transaction
+      </button>
     </form>
   );
 };
