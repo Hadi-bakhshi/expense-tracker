@@ -1,7 +1,11 @@
-const TransAction = ({transactions}) => {
-    return transactions.map((transaction) => {
-        return <div className="flex justify-around items-center py-2" key={transaction.id}>{transaction.desc}{transaction.amount}</div>;
-    });
-}
+const TransAction = ({ transactions }) => {
+  return (
+    <section>
+      {transactions.map((t) => (
+        <div key={t.id}>{t.desc}</div>
+      ))}
+    </section>
+  );
+};
 
-export default TransAction
+export default TransAction;
