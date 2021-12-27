@@ -22,7 +22,7 @@ const OverView = ({ income, expense, addTransaction }) => {
           {isShow ? "Cancel" : "Add"}
         </button>
       </div>
-      {isShow && <TransactionForm addTransaction={addTransaction} />}
+      {isShow && <TransactionForm addTransaction={addTransaction} setIsShow={setIsShow}/>}
       <div className="flex justify-around items-center py-2">
         <div className="flex flex-col items-center w-full mx-2 border-2 border-solid border-gray-300">
           Expense <span className="font-bold text-red-600">$ {expense}</span>

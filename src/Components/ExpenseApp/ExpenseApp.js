@@ -8,9 +8,16 @@ const ExpenseApp = () => {
   const [transactions, setTransactions] = useState([]);
 
   const addTransaction = (formValues) => {
-    setTransactions([...transactions, { ...formValues, id: Date.now() }]);
+    setTransactions([
+      ...transactions,
+      { ...formValues, id: Math.floor(Math.random() * 1000) },
+    ]);
   };
 
+  const deleteTransaction = (id) => {
+    const newTnx = transactions.filter((t) => t.id !== id);
+    setTransactions(newTnx);
+  }
   useEffect(() => {
     let exp = 0;
     let inc = 0;
@@ -30,7 +37,7 @@ const ExpenseApp = () => {
         expense={expense}
         addTransaction={addTransaction}
       />
-      <TransAction transactions={transactions} />
+      <TransAction  transactions={transactions} key={transactions.id} deleteTransaction={deleteTransaction} />
     </section>
   );
 };
