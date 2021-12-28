@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import OverView from "../OverView/OverView";
 import TransAction from "../TransAction/TransAction";
+import ChartBar from "../ChartBar/ChartBar";
 
 const ExpenseApp = () => {
   const [expense, setExpense] = useState(0);
@@ -17,7 +18,7 @@ const ExpenseApp = () => {
   const deleteTransaction = (id) => {
     const newTnx = transactions.filter((t) => t.id !== id);
     setTransactions(newTnx);
-  }
+  };
   useEffect(() => {
     let exp = 0;
     let inc = 0;
@@ -31,13 +32,19 @@ const ExpenseApp = () => {
   }, [transactions]);
 
   return (
-    <section className="container flex flex-col mx-auto bg-white rounded-md">
+    <section className="container flex flex-col mt-2 mx-auto bg-white rounded-md">
       <OverView
         income={income}
         expense={expense}
         addTransaction={addTransaction}
       />
-      <TransAction  transactions={transactions} key={transactions.id} deleteTransaction={deleteTransaction} />
+      <ChartBar income={income} expense={expense} transactions={transactions} />
+
+      <TransAction
+        transactions={transactions}
+        key={transactions.id}
+        deleteTransaction={deleteTransaction}
+      />
     </section>
   );
 };
