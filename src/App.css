@@ -1,3 +1,22 @@
+
+:root{
+    --primarypastel:#BFA2DB;
+    --yasi:#BFA2DB;
+    --darkpurple:#986D8E;
+    --lemonchifen:#ffee93;
+    --lightbluepastelcolor:#a0ced9;
+    --peachc:#ffc09f;
+    --honeydew:#809bce;
+    --champaignpink:#e8d1c5;
+    --maxblue:#52b2cf;
+    --snow:#fffbff;
+    --bluee:#6e78ff;
+    --darkblue:#11324D;
+}
 .z-nav{
     z-index: 9999;
+}
+.nav-color{
+    background-color: var(--yasi);
+   
 }

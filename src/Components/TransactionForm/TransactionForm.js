@@ -19,22 +19,24 @@ const TransactionForm = ({ addTransaction, setIsShow }) => {
   return (
     <form onSubmit={submitHandler} className="flex flex-col items-center">
       <input
-        className="bg-gray-200 rounded-md my-2 p-1"
+        className="bg-stone-100 border-none rounded-md my-3 p-2 shadow-lg"
         name="desc"
         type="text"
         onChange={changeHandler}
         value={formValues.desc}
+        placeholder="Description"
       />
       <input
-        className="bg-gray-200 rounded-md my-2 p-1"
+        className="bg-stone-100 border-none rounded-md my-3 p-2  shadow-lg"
         name="amount"
         type="number"
         onChange={changeHandler}
         value={formValues.amount}
+        placeholder="Value"
       />
       <div className="flex flex-row items-center p-1">
         <input
-          className="m-2"
+          className="m-2 cursor-pointer text-purple-800"
           type="radio"
           value="expense"
           name="type"
@@ -44,7 +46,7 @@ const TransactionForm = ({ addTransaction, setIsShow }) => {
         />
         <label htmlFor="expense">Expense</label>
         <input
-          className="m-2"
+          className="m-2 cursor-pointer text-purple-800"
           type="radio"
           value="income"
           name="type"
@@ -56,7 +58,7 @@ const TransactionForm = ({ addTransaction, setIsShow }) => {
       </div>
       <button
         type="submit"
-        className="bg-violet-100 text-violet-700 font-semibold p-2 rounded-md hover:text-violet-100 hover:bg-violet-700"
+        className="bg-purple-900 text-purple-300 font-semibold p-2 rounded-md hover:text-white hover:bg-purple-700"
       >
         Add Transaction
       </button>

@@ -30,28 +30,31 @@ const TransAction = ({ transactions,deleteTransaction }) => {
   if (!transactions.length) return <h3>Nothing here</h3>;
 
   return (
-    <section className="w-full">
-      <input
-        className="search bg-gray-100 m-1 p-2 rounded-md block"
+    <>
+    <input
+        className="search bg-gray-100 m-1 p-2 rounded-md block "
         type="text"
         value={searchItem}
         onChange={handleChange}
         placeholder="Search"
       />
+    <section className="grid grid-cols-2 grid-row-4 gap-4 sm:grid-cols-3">
+      
       {filterTnx.length
         ? filterTnx.map((t) => (
             <div
               key={t.id}
-              className="flex justify-between border-l-8 border-green-600 rounded-md bg-gray-100 p-3 my-2 mx-2 font-semibold"
+              className="flex flex-col items-center justify-between border-l-8 border-green-600 rounded-md shadow-lg bg-gray-100 p-2 my-2  font-semibold"
               style={{ borderLeft: t.type === "expense" && "8px solid red" }}
             >
-              <span>{t.desc}</span>
-              <span>$ {t.amount}</span>
-              <button onClick={() =>deleteTransaction(t.id)}>Delete</button>
+              <span className="text-stone-500">{t.desc}</span>
+              <span className="text-purple-900 font-bold">$ {t.amount}</span>
+              <button onClick={() =>deleteTransaction(t.id)}>-</button>
             </div>
           ))
         : " No results"}
     </section>
+    </>
   );
 };
 
