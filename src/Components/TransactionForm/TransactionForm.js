@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { useToasts } from "react-toast-notifications";
 
 const TransactionForm = ({ addTransaction, setIsShow }) => {
+  const { addToast } = useToasts();
   const [formValues, setFormValues] = useState({
     type: "expense",
     amount: 0,
@@ -14,6 +16,19 @@ const TransactionForm = ({ addTransaction, setIsShow }) => {
     e.preventDefault();
     addTransaction(formValues);
     setIsShow(false);
+    if (formValues.type === "income") {
+      addToast("Income added successfully", {
+        appearance: "success",
+        autoDismiss: true,
+        autoDismissTimeout: 3000,
+      });
+    } else {
+      addToast("Expense added successfully", {
+        appearance: "success",
+        autoDismiss: true,
+        autoDismissTimeout: 3000,
+      });
+    }
   };
 
   return (
