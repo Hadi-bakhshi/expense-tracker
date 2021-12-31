@@ -32,7 +32,7 @@ const TransAction = ({ transactions, deleteTransaction }) => {
   if (!transactions.length)
     return (
       <div className="flex flex-col items-center justify-center mt-8 text-purple-900 font-semibold "><h3>Click On 'Add' Button To Add Transaction</h3>
-      <p className="text-stone-400 font-medium">Developed By <a href="https://github.com/Hadi-bakhshi" target="_blank">Hadi Bakhshi</a></p>
+      <p className="text-stone-400 font-medium">Developed By <a href="https://github.com/Hadi-bakhshi" target="_blank" rel="noreferrer">Hadi Bakhshi</a></p>
       </div>
     );
 
