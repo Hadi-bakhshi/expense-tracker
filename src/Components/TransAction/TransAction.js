@@ -26,6 +26,7 @@ const TransAction = ({ transactions, deleteTransaction }) => {
 
   useEffect(() => {
     filterTransactions(searchItem);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [transactions]);
 
   if (!transactions.length)
