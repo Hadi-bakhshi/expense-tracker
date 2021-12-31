@@ -5,15 +5,19 @@ import { FaMoneyCheckAlt } from "react-icons/fa";
 
 const user = {
   name: "Hadi Bakhshi",
-  email: "Hadi@Bakhshi.com",
+  email: "Hadibakhshi277@gmail.com",
   imageUrl:
     "https://drive.google.com/uc?export=download&id=1UMe1u18RaEvndGMOvrk9qC8h3NzP865P",
 };
 const navigation = [
   { name: "Dashboard", href: "#", current: true },
   { name: "Transactions", href: "#", current: false },
-  { name: "Budget", href: "#", current: false },
   { name: "Calendar", href: "#", current: false },
+  {
+    name: "Todos",
+    href: "https://todo-app-react-blue.vercel.app/",
+    current: false,
+  },
 ];
 const userNavigation = [
   { name: "Your Profile", href: "#" },

@@ -18,7 +18,7 @@ const ChartBar = ({ transactions, income, expense }) => {
         width={600}
         height={200}
         data={data}
-        colorScale={["	#BFA2DB", "#ffc09f"]}
+        colorScale={["	#C9E4C5", "#F7DAD9"]}
         animate={{
           duration: 2000,
         }}

@@ -2,11 +2,14 @@ import { useEffect, useState } from "react";
 import OverView from "../OverView/OverView";
 import TransAction from "../TransAction/TransAction";
 import ChartBar from "../ChartBar/ChartBar";
+import { useToasts } from "react-toast-notifications";
 
 const ExpenseApp = () => {
   const [expense, setExpense] = useState(0);
   const [income, setIncome] = useState(0);
   const [transactions, setTransactions] = useState([]);
+
+  const { addToast } = useToasts();
 
   const addTransaction = (formValues) => {
     setTransactions([
@@ -18,6 +21,11 @@ const ExpenseApp = () => {
   const deleteTransaction = (id) => {
     const newTnx = transactions.filter((t) => t.id !== id);
     setTransactions(newTnx);
+    addToast("Transaction was removed!", {
+      appearance: "error",
+      autoDismiss: true,
+      autoDismissTimeout: 3000,
+    });
   };
   useEffect(() => {
     let exp = 0;
